@@ -4,25 +4,22 @@ on:
   push:
     branches: [ main ]
 
-
-   permissions:
+permissions:
   contents: write
   pages: write
   id-token: write
 
-
-   jobs:
+jobs:
   deploy:
     runs-on: ubuntu-latest
 
-
- steps:
+    steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-
- - name: Deploy static files
+      - name: Deploy static files
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
           folder: .
+      
